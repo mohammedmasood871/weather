@@ -1,0 +1,22 @@
+<div class="box">
+    <div class="header">
+      Weather man
+      <p class="hidden">Thanks!</p>
+    </div>
+    <div class="form">
+      <select name="" id="" class="field" #weather>
+        <option value="Chennai">Chennai</option>
+        <option value="Hosur">Hosur</option>
+        <option value="Salem">Salem</option>
+      </select>
+      <button
+        type="button"
+        value="Check Weather"
+        class="button"
+        (click)="onSubmit(weather.value)"
+      >
+        Check Weather
+      </button>
+    </div>
+  </div>
+  
