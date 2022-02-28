@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SelectorComponent } from './selector/selector.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ErrorComponent } from './error/error.component'
+import { ErrorComponent } from './error/error.component';
+import { HeaderComponent } from './header/header.component'
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ErrorComponent } from './error/error.component'
     AppComponent,
     WeatherComponent,
     SelectorComponent,
-    ErrorComponent
+    ErrorComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

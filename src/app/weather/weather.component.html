@@ -1,39 +1,433 @@
+<div class="container my-5">
+    <div class="row">
+        <!-- card 1 -->
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather1Data.name}}
+                            </div>
+                        </div>
 
 
-
-
-<div class="row main-content">
-    <div class="col-xl col-lg-2 col-md-0 col-12"></div>
-    <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-        <!-- CARD 1 - Strong Rains -->
-        <div class="card hydrogen-card">
-            <div class="card-content">
-                <div class="row head">
-                    <div class="col-12">
-                        <div class="chip">
-                            {{dataSource.location.name}}
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage1}}" alt="">
+                            <span class="weather-description"> {{weather1Data?.weather[0]?.main}}</span>
                         </div>
                     </div>
                   
-                   
-                </div>
-                <div class="row main">
-                    <div class="col-12 weather">
-                        <img src="{{dataSource.current.condition.icon}}" alt="">
-                        <span class="weather-description">{{dataSource.current.condition.text}}</span>
-                    </div>
-                </div>
-                <div class="row foot">
-                    
-                    <div class="col-12 temperature">
-                        <span>
-                            {{dataSource.current.temp_f}}  &#8457;
-                        </span>
-                    </div>
                 </div>
             </div>
         </div>
+        <!-- card 2 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather2">
+                <div class="card-content" *ngIf="!weather2">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton2()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput2">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather2>
+                             <div class="alert alert-danger my-1" *ngIf="weatherErro2 != ''">{{weatherErro2}} </div>
+                            <button class="btn btn-warning my-3" *ngIf="showInput2"
+                                (click)="getweather2(weather2.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather2">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather2Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage2}}" alt="">
+                            <span class="weather-description"> {{weather2Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+        <!-- card 3 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather3">
+                <div class="card-content" *ngIf="!weather3">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton3()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput3">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather3>
+                            <div class="alert alert-danger my-1" *ngIf="weatherErro3 != ''">{{weatherErro3}} </div>
+
+                            <button class="btn btn-warning my-3" *ngIf="showInput3"
+                                (click)="getweather3(weather3.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather3">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather3Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage3}}" alt="">
+                            <span class="weather-description" > {{weather3Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+        <!-- card 4 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather4">
+                <div class="card-content" *ngIf="!weather4">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton4()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput4">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather4>
+                            <div class="alert alert-danger my-1" *ngIf="weatherErro4 != ''">{{weatherErro4}} </div>
+
+                            <button class="btn btn-warning my-3" *ngIf="showInput4"
+                                (click)="getweather4(weather4.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather4">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather4Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage4}}" alt="">
+                            <span class="weather-description"> {{weather4Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+        <!-- card 5 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather5">
+                <div class="card-content" *ngIf="!weather5">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton5()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput5">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather5>
+                            <div class="alert alert-danger my-1" *ngIf="weatherErro5 != ''">{{weatherErro5}} </div>
+
+                            <button class="btn btn-warning my-3" *ngIf="showInput5"
+                                (click)="getweather5(weather5.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather5">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather5Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage5}}" alt="">
+                            <span class="weather-description"> {{weather5Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+        <!-- card 6 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather6">
+                <div class="card-content" *ngIf="!weather6">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton6()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput6">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather6>
+                            <div class="alert alert-danger my-1" *ngIf="weatherErro6 != ''">{{weatherErro6}} </div>
+
+                            <button class="btn btn-warning my-3" *ngIf="showInput6"
+                                (click)="getweather6(weather6.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather6">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather6Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage6}}" alt="">
+                            <span class="weather-description"> {{weather6Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+        <!-- card 7 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather7">
+                <div class="card-content" *ngIf="!weather7">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton7()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput7">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather7>
+                            <div class="alert alert-danger my-1" *ngIf="weatherErro7 != ''">{{weatherErro7}} </div>
+
+                            <button class="btn btn-warning my-3" *ngIf="showInput7"
+                                (click)="getweather7(weather7.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather7">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather7Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage7}}" alt="">
+                            <span class="weather-description"> {{weather7Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+        <!-- card 8 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather8">
+                <div class="card-content" *ngIf="!weather8">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton8()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput8">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather8>
+                            <div class="alert alert-danger my-1" *ngIf="weatherErro8 != ''">{{weatherErro8}} </div>
+
+                            <button class="btn btn-warning my-3" *ngIf="showInput8"
+                                (click)="getweather7(weather8.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather8">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather8Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage8}}" alt="">
+                            <span class="weather-description"> {{weather8Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+        <!-- card 9 -->
+
+        <div class="col-md-4 my-3">
+            <div class="card hydrogen-card" *ngIf="!weather9">
+                <div class="card-content" *ngIf="!weather9">
+                    <div class="row head">
+                        <div class="col-12  d-flex align-center">
+                            <button class="btn btn-warning" (click)="showButton9()">Search City</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather" *ngIf="showInput9">
+                            <input type="text" class="form-control" placeholder="Enter city name" value="" #weather9>
+                            <div class="alert alert-danger my-1" *ngIf="weatherErro9 != ''">{{weatherErro9}} </div>
+
+                            <button class="btn btn-warning my-3" *ngIf="showInput9"
+                                (click)="getweather7(weather9.value)">Search </button>
+
+                        </div>
+                    </div>
+                    <div class="row foot">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hydrogen-card" *ngIf="weather9">
+                <div class="card-content">
+                    <div class="row head">
+                        <div class="col-12">
+                            <div class="chip">
+                                {{weather9Data.name}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row main">
+                        <div class="col-12 weather">
+                            <img src="{{weatherImage9}}" alt="">
+                            <span class="weather-description"> {{weather9Data?.weather[0]?.main}}</span>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
     </div>
-   
-    <div class="col-xl col-lg-2 col-md-0 col-12"></div>
 </div>
